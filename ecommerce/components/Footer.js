@@ -18,7 +18,7 @@ function Footer() {
             </Link>
           </li>
           <li>
-            <Link href="/contact">
+            <Link href="contacts">
               <a>Contact</a>
             </Link>
           </li>
