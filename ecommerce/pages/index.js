@@ -4,7 +4,6 @@ import styles from "../styles/Products.module.css";
 import Image from "next/image";
 
 export default function products({ product }) {
-  console.log(product);
   return (
     <div>
       <div className={styles.container}>

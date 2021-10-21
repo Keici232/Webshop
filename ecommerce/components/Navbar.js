@@ -19,12 +19,12 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/contacts">
+            <Link href="contacts">
               <a>Contact</a>
             </Link>
           </li>
           <li>
-            <Link href="/orders">
+            <Link href="orders">
               <a>Mina bestälningar</a>
             </Link>
           </li>
