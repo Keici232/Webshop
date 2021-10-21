@@ -2,24 +2,17 @@ import React from "react";
 import Link from "next/link";
 import styles from "../styles/Products.module.css";
 import Image from "next/image";
+import Product from "../components/Product";
 
-export default function products({ product }) {
+export default function index({ products }) {
   return (
-    <div>
-      <div className={styles.container}>
-        {product.map((p) => (
-          <ul>
-            <Image
-              width={200}
-              height={200}
-              key={p.id}
-              src={p.image}
-              alt={p.title}
-            />
-          </ul>
+    <main className="container">
+      <div className="main">
+        {products.map((apiProduct) => (
+          <Product key={apiProduct.id} product={apiProduct} />
         ))}
       </div>
-    </div>
+    </main>
   );
 }
 
@@ -27,5 +20,5 @@ export async function getStaticProps() {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
 
-  return { props: { product: data } };
+  return { props: { products: data } };
 }
