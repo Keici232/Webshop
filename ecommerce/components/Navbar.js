@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./../styles/Navbar.module.css";
+import { Icon } from "semantic-ui-react";
 
 function Navbar() {
   return (
@@ -26,6 +27,13 @@ function Navbar() {
           <li>
             <Link href="orders">
               <a>Mina bestälningar</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/shoppingBag">
+              <a>
+                <Icon name="shopping cart" />
+              </a>
             </Link>
           </li>
         </ul>
