@@ -2,7 +2,7 @@ import Link from "next/Link";
 
 const error = () => {
   return (
-    <div>
+    <div className="container">
       <p> Error, page nor found</p>
 
       <Link href="/">
