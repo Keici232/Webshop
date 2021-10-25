@@ -1,9 +1,16 @@
 import Product from "../../components/Product";
 import Image from "next/image";
 import styles from "./../../styles/singleProduct.module.css";
+import { Button } from "semantic-ui-react";
+import { CartContext, CART_ITEM } from "../../components/context/CartProvider";
+import { useContext } from "react";
+import shoppingBag from "../shoppingBag";
 
 const singleProduct = ({ product }) => {
   const { title, id, image, price, description, category } = product;
+  const cart = useContext(CartContext);
+  shoppingBag({ id, title, image, price });
+
   return (
     <div className="container">
       <div className={styles.product}>
@@ -18,6 +25,10 @@ const singleProduct = ({ product }) => {
           <p>{description}</p>
           <br />
           <h1>Price: ${price}</h1>
+          <Button color="green"
+            onClick={() => cart.dispatch({ type: CART_ITEM.ADD_ITEM, payload: [id, title, image, price] })}>
+            Add to cart
+          </Button>
         </div>
       </div>
     </div>
