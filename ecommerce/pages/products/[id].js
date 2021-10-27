@@ -26,7 +26,7 @@ const singleProduct = ({ product }) => {
           <br />
           <h1>Price: ${price}</h1>
           <Button color="green"
-            onClick={() => cart.dispatch({ type: CART_ITEM.ADD_ITEM, payload: [id, title, image, price] })}>
+            onClick={() => cart.dispatch({ type: CART_ITEM.ADD_ITEM, payload: { id, title, image, price } })}>
             Add to cart
           </Button>
         </div>
