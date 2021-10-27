@@ -6,6 +6,7 @@ const initialState = [];
 export const CART_ITEM = {
     ADD_ITEM: "add_item",
     REMOVE_ITEM: "remove_item",
+    REMOVE_ALLITEM: "remove_allItem",
 };
 
 
@@ -28,6 +29,9 @@ function reducer(state, action) {
                 return acc;
             }, []);
             return [...newState];
+
+        case "remove_allItem":
+            return state.filter((item) => item.id !== id);
 
         default:
             return [...state];

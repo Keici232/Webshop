@@ -10,6 +10,7 @@ export default function index({ products }) {
       <div className="main">
         {products.map((apiProduct) => (
           <Product key={apiProduct.id} product={apiProduct} />
+          
         ))}
       </div>
     </main>

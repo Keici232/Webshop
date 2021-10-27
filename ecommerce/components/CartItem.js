@@ -16,6 +16,14 @@ const CartItem = ({ id }) => {
 
     }, [cart])
 
+    function removeAll() {
+        id.map(item => {
+            cart.dispatch({ type: CART_ITEM.REMOVE_ALLITEM, payload: { id: item.id } })
+        })
+
+    }
+
+
     if (totalPrice != 0) {
         return (
             <div>
@@ -46,18 +54,19 @@ const CartItem = ({ id }) => {
                     <ul style={{ marginTop: "30px" }}>
                         <li>
                             {" "}
-                            <h1>Total: {totalPrice} $ </h1>
+                            <h1>Total: {Math.round(totalPrice)} $ </h1>
                         </li>{" "}
                         <li>
                             <Link href="/">
-                                <Button icon color="green" inverted>
+                                <Button icon color="green" inverted
+                                    onClick={removeAll}>
                                     <Icon> OK</Icon>
                                 </Button>
                             </Link>
                         </li>{" "}
                     </ul>{" "}
                 </div>
-            </div>
+            </div >
         );
     } else {
         return (
