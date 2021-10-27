@@ -40,14 +40,20 @@ ul {
 .button {
   padding: 10px 30px;
   background-color: bisque;
-  margin-top: 20px;
+  margin-top: 30px;
   display: block;
   color: rgb(174, 172, 172);
   border-radius: 25px;
+  cursor: pointer;
 }
 
 .button:hover {
   color: rgb(174, 172, 172);
   background-color: rgb(220, 220, 220);
   border-radius: 25px;
+}
+
+.hover-item:hover {
+  background-color: green;
+  color: white;
 }

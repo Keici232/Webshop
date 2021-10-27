@@ -16,7 +16,7 @@ const singleProduct = ({ product }) => {
       <div className={styles.product}>
         <div>
           {" "}
-          <Image src={image} width="300" height="500" />
+          <Image src={image} width="300" height="300" />
         </div>
         <div className={styles.info}>
           <h1>{title}</h1>
@@ -26,7 +26,7 @@ const singleProduct = ({ product }) => {
           <br />
           <h1>Price: ${price}</h1>
           <Button color="green"
-            onClick={() => cart.dispatch({ type: CART_ITEM.ADD_ITEM, payload: [id, title, image, price] })}>
+            onClick={() => cart.dispatch({ type: CART_ITEM.ADD_ITEM, payload: { id, title, image, price } })}>
             Add to cart
           </Button>
         </div>

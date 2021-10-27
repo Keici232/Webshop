@@ -1,9 +1,16 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./../styles/Navbar.module.css";
-import { Icon } from "semantic-ui-react";
+import { Icon, Menu } from "semantic-ui-react";
+import { useContext } from "react";
+import { CartContext } from "./context/CartProvider";
 
 function Navbar() {
+  const { state: items } = useContext(CartContext);
+
+  const acc = items.length;
+
+
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
@@ -30,10 +37,11 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/shoppingBag">
-              <a>
+            < Link href="/shoppingBag" >
+              <Menu.Item>
                 <Icon name="shopping cart" />
-              </a>
+                {acc}
+              </Menu.Item>
             </Link>
           </li>
         </ul>
