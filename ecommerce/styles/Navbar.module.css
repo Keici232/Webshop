@@ -1,6 +1,7 @@
 .nav {
   padding: 20px 0;
   box-shadow: 2px 1px 1px #ccc;
+  margin-bottom: 20px;
 }
 
 .container {
@@ -17,6 +18,7 @@
 }
 
 .container ul li {
+  margin-top: 10px;
   margin-left: 30px;
 }
 
@@ -41,4 +43,8 @@
 
 .footer ul {
   margin-left: 25px;
+}
+
+.rowImage {
+  margin-right: 20px;
 }
